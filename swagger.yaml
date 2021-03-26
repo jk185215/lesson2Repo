@@ -1,0 +1,66 @@
+---
+swagger: "2.0"
+info:
+  version: 1.0-SNAPSHOT
+  title: “lesson 2”
+basePath: /v1
+paths:
+  /account/{id}:
+    get:
+      x-ncr-mock: "{\n  \"id\": 1234,\n  \"type\": \"checking\",\n  \"label\": \"my checking account\",\n  \"balance\": 100\n}"
+      description: Simple get mock.
+      operationId: getSimple
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        200:
+          description: empty response
+  /accounts:
+    post:
+      operationId: accounts/createAccount
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: empty response
+  /accounts/{accountId}:
+    get:
+      description: Simple get mock.
+      operationId: accounts/getBalance
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: accountId
+        required: true
+        type: integer
+      responses:
+        200:
+          description: empty response
+  /accounts:
+    get:
+      description: Simple get mock.
+      operationId: accounts/queryAccounts
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: customerId
+        type: integer
+        description: Customer Id
+      responses:
+        200:
+          description: empty response
