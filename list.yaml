@@ -20,7 +20,7 @@ lists:
   - action: log
   - action: copy
     parameters:
-      set.ext.response.body.balance: 100
+      set.ext.response.body.balance: 10000
       set.ext.response.status.code: 201
       set.ext.response.body.type: "checking"
       set.ext.response.body.label: "my checking account"
